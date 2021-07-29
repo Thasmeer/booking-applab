@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  API_URL: 'https://booking-applab-api.herokuapp.com/'
+  production: false,
+  API_URL: 'https://booking-applab-api.herokuapp.com'
 };
 
 /*
