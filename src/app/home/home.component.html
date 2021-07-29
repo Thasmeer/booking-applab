@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-4">
+    <div class="form-container" style="flex: auto">
+      <form (submit)="createBooking()">
+        <mat-form-field>
+          <input
+            [(ngModel)]="bookingDate"
+            name="bookingDate"
+            matInput
+            [matDatepicker]="picker"
+            [min]="minDate"
+            placeholder="Date"
+            readonly
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input [(ngModel)]="name" name="name" matInput placeholder="Name" />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            [(ngModel)]="email"
+            name="email"
+            matInput
+            placeholder="Email"
+          />
+        </mat-form-field>
+        <button mat-raised-button color="primary">Complete Booking</button>
+      </form>
+    </div>
+    <div class="form-container" style="margin-left: 20rem">
+      <div *ngFor="let seat of seats" style="display: inline-block">
+        <button
+          *ngIf="seat?.available"
+          mat-flat-button
+          color="primary"
+          (click)="setSeat(seat?.no)"
+          [ngClass]="filter === seat?.no ? 'selected' : 'unselected'"
+        >
+          {{ seat?.no }}
+        </button>
+        <button
+          *ngIf="!seat?.available"
+          mat-flat-button
+          color="primary"
+          class="full"
+        >
+          Full
+        </button>
+      </div>
+    </div>
+    <div style="margin-top: 50px; flex-direction: column">
+      <h3>What does it mean?</h3>
+      <button mat-flat-button color="primary" class="unselected">Vacant</button>
+      <button mat-flat-button color="primary" class="full">Full</button>
+    </div>
+  </div>
+</div>

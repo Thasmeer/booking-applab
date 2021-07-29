@@ -1,0 +1,41 @@
+
+.form-container {
+  margin-top: 50px;
+  max-width: 350px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+.col-4 {
+  display: flex;
+  flex-direction: row;
+}
+
+.full {
+  background-color: red;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  margin: 5px;
+  font-size: 12px;
+}
+.selected {
+  background-color: rgb(41, 41, 224);
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  margin: 5px;
+  font-size: 12px;
+}
+
+.unselected {
+  background-color: green;
+  cursor: pointer;
+  color: #fff;
+  margin: 5px;
+  font-size: 18px;
+  font-family: Montserrat, Roboto, sans-serif;
+  font-size: 12px;
+}
